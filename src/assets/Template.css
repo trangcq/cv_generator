@@ -1,0 +1,99 @@
+#cvo-document {
+  color: #000;
+}
+
+.cvo-document {
+  width: 100%;
+}
+
+.cvo-document .cvo-page {
+  padding: 0;
+  position: relative;
+}
+
+.cvo-document .cvo-page {
+  width: 210mm;
+  min-height: 260mm;
+  padding: 20mm;
+  margin: 0 auto;
+  box-shadow: 0 0 1px rgba(0,0,0,.25);
+  background-color: #fff;
+}
+
+.cvo-document .cvo-subpage {
+  padding: 1.2cm;
+  min-height: initial;
+}
+
+#cvo-body {
+  margin: 0 auto;
+  width: 100%;
+  font-size: 11pt;
+  position: relative;
+  background: #fff;
+  font-family: times new roman,Georgia,Serif;
+  font-weight: 300;
+}
+
+.cvo-block:last-child {
+  border-bottom: none;
+}
+
+.cvo-block:first-child {
+  padding-top: 3mm;
+}
+
+.cvo-block {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 3mm 3mm;
+}
+
+#cvo-header.hide-avatar {
+  width: 100%;
+}
+
+#cvo-header {
+  float: right;
+  width: 80%;
+  text-align: center;
+}
+
+#cvo-profile-fullname {
+  min-width: 280pt;
+  text-transform: capitalize;
+  font-size: 15pt;
+  font-weight: 600;
+}
+
+#cvo-header p {
+  margin-bottom: 5pt;
+}
+
+.cvo-block-title {
+  padding: 1px;
+  border-bottom: 1px solid #666;
+}
+
+#cvo-body h1, #cvo-body h2, #cvo-body h3, #cvo-body h4, #cvo-body h5 {
+  color: #000;
+}
+
+.cvo-block-title h3, #cvo-project-blocktitle {
+  text-transform: uppercase;
+  font-size: 14pt;
+  font-weight: 700;
+}
+
+.cvo-block-title span {
+  width: 100%;
+}
+
+.default_min_width {
+  min-width: 25pt;
+}
+
+#cvo-objective-objective {
+  margin: .1cm auto;
+  width: 100%;
+}
