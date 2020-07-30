@@ -1,0 +1,15 @@
+{
+  "users": [
+    {
+      "name": "Chu Quỳnh Trang",
+      "age": "263333",
+      "address": "Thanh Xuân, Hà Nội",
+      "email": "chuquynhtrang.dhcn@gmail.com",
+      "career": "Áp dụng những kinh nghiệm về kỹ năng bán hàng và sự hiểu biết về thị trường để trở thành một nhân viên bán hàng chuyên nghiệp, mang đến nhiều giá trị cho khách hàng. Từ đó giúp Công ty tăng số lượng khách hàng và mở rộng tập khách hàng.",
+      "education": "Tốt nghiệp loại Giỏi, điểm trung bình 8.0",
+      "experience": "- Hỗ trợ viết bài quảng cáo sản phẩm qua kênh facebook, các forum,...\n- Giới thiệu, tư vấn sản phẩm, giải đáp các vấn đề thắc mắc của khách hàng qua điện thoại và email.\n",
+      "template": "0",
+      "id": 1
+    }
+  ]
+}
