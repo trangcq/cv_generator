@@ -26,7 +26,7 @@ class FormCV extends Component {
 
     onHandleSubmit = (e) => {
         e.preventDefault();
-        let url = "http://localhost:3000/users/1";
+        let url = "https://thawing-hollows-05070.herokuapp.com/users/1";
         fetch(url, {
             method: "PUT",
             mode: "cors",
