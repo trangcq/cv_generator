@@ -1,0 +1,154 @@
+#cvo-document {
+  color: #000;
+}
+
+.cvo-document {
+  width: 100%;
+}
+
+.cvo-document .cvo-page {
+  padding: 0;
+  position: relative;
+  width: 210mm;
+  min-height: 260mm;
+  padding: 20mm;
+  margin: 0 auto;
+  box-shadow: 0 0 1px rgba(0,0,0,.25);
+  background-color: #fff;
+}
+
+.cvo-document .cvo-subpage {
+  padding: 7mm;
+  padding-bottom: 5mm;
+  min-height: 200mm;
+}
+
+#cvo-body {
+  margin: 0 auto;
+  width: 100%;
+  min-height: 190mm;
+  position: relative;
+  font-family: Arial,sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+#group-header {
+  padding-top: 3px;
+  width: 100%;
+  padding: 1px;
+  margin-bottom: 0;
+}
+
+#cvo-header-top-left {
+  padding-top: 20px;
+  float: left;
+  text-align: left;
+  width: 85%;
+  padding-left: 1px;
+}
+
+#cvo-profile-fullname {
+  width: 100%;
+  font-weight: lighter;
+  font-size: 28px;
+  text-transform: capitalize;
+  line-height: 36px;
+  display: inline-block;
+}
+
+#cvo-profile-title {
+  text-transform: capitalize;
+  width: 100%;
+}
+
+.color-content {
+  color: #444;
+}
+
+.default_min_width {
+  min-width: 25pt;
+}
+
+#cvo-header-top-right {
+  padding-top: 10px;
+  float: right;
+  text-align: right;
+  width: 15%;
+  padding-right: 1px;
+}
+
+#cvo-profile-avatar-wraper {
+  width: 100%;
+  text-align: right;
+}
+
+#cvo-profile-avatar-wraper img {
+  width: 80%;
+  border-radius: 50%;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+#cvo-header-bottom {
+  padding: 10px 0;
+  text-align: left;
+}
+
+#cvo-header-bottom span {
+  margin-right: 15px;
+}
+
+#cvo-profile-email, #cvo-profile-address {
+  min-width: 140px;
+}
+
+#cvo-profile-phone {
+  min-width: 80px;
+}
+
+#cvo-header-bottom span#cvo-profile-address {
+  display: inline;
+}
+
+#cvo-profile-address {
+  min-width: 140px;
+}
+
+#cvo-main {
+  width: 100%;
+  float: left;
+  min-height: 560px;
+}
+
+#cvo-main .cvo-block {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.cvo-block {
+  padding-left: 3mm;
+  padding-right: 3mm;
+}
+
+#cvo-main .cvo-block-title {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 32px;
+  text-transform: uppercase;
+}
+
+#cvo-main .row {
+  margin-top: 5px;
+}
+
+#cvo-objective-objective {
+  margin: .1cm auto;
+  width: 100%;
+  white-space: pre-line;
+}
