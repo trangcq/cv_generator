@@ -26,7 +26,7 @@ class FormCV extends Component {
 
     onHandleSubmit = (e) => {
         e.preventDefault();
-        let url = "https://thawing-hollows-05070.herokuapp.com/users/1";
+        const url = "https://thawing-hollows-05070.herokuapp.com/users/1";
         fetch(url, {
             method: "PUT",
             mode: "cors",
@@ -44,6 +44,7 @@ class FormCV extends Component {
     }
 
     render() {
+        const { users } = this.props;
         return (
             <div className="panel panel-default">
                 <div className="panel-heading">

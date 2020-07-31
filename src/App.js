@@ -7,20 +7,30 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            users: []
+            users: null
         };
     }
 
     onSubmit = (data) => {
-        var { users } = this.state;
-        users.pop();
-        users.push(data);
         this.setState({
-            users: users
+            users: data
         });
     }
 
+    componentDidMount() {
+        const url = 'https://thawing-hollows-05070.herokuapp.com/users/1';
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                this.setState({ users : data });
+            })
+            .catch(function(err) {
+                console.info(err + " url: " + url);
+            });
+    }
+
     render() {
+        const { users } = this.state;
         return (
             <div className="container mt-30">
                 <div className="row">
@@ -28,7 +38,7 @@ class App extends Component {
                         <FormCV onSubmit={this.onSubmit} />
                     </div>
                     <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                        <Template users={this.state.users}  />
+                        <Template users={users} />
                     </div>
                 </div>
             </div>
