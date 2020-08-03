@@ -11,7 +11,8 @@ class FormCV extends Component {
             career: '',
             education: '',
             experience: '',
-            template: 0
+            template: '0',
+            errors: {}
         };
     }
 
@@ -24,23 +25,75 @@ class FormCV extends Component {
         });
     }
 
+    handleValidation = () => {
+        let fields = this.state;
+        let errors = {};
+        let formIsValid = true;
+        if (!fields.name) {
+            formIsValid = false;
+            errors['name'] = "Cannot be empty";
+        }
+        if (!fields.email) {
+            formIsValid = false;
+            errors['email'] = "Cannot be empty";
+        } else if(typeof fields["email"] !== "undefined"){
+            let lastAtPos = fields["email"].lastIndexOf('@');
+            let lastDotPos = fields["email"].lastIndexOf('.');
+
+            if (!(lastAtPos < lastDotPos && lastAtPos > 0 && fields["email"].indexOf('@@') == -1 && lastDotPos > 2 && (fields["email"].length - lastDotPos) > 2)) {
+                formIsValid = false;
+                errors["email"] = "Email is not valid";
+            }
+        }
+        if (!fields.career) {
+            formIsValid = false;
+            errors['career'] = "Cannot be empty";
+        }
+        if (!fields.education) {
+            formIsValid = false;
+            errors['education'] = "Cannot be empty";
+        }
+        if (!fields.experience) {
+            formIsValid = false;
+            errors['experience'] = "Cannot be empty";
+        }
+        this.setState({errors: errors});
+        return formIsValid;
+    }
+
     onHandleSubmit = (e) => {
         e.preventDefault();
-        const url = "https://thawing-hollows-05070.herokuapp.com/users/1";
-        fetch(url, {
-            method: "PUT",
-            mode: "cors",
-            body: JSON.stringify(this.state),
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }).then(response => {
-            console.log(response.json());
-        })
-        .catch(function(err) {
-            console.info(err + " url: " + url);
+        if (this.handleValidation()) {
+            const url = "https://thawing-hollows-05070.herokuapp.com/users/1";
+            fetch(url, {
+                method: "PUT",
+                mode: "cors",
+                body: JSON.stringify(this.state),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            }).then(response => {
+                console.log(response.json());
+            })
+                .catch(function (err) {
+                    console.info(err + " url: " + url);
+                });
+            this.props.onSubmit(this.state);
+        }
+    }
+
+    onReset = (e) => {
+        e.preventDefault();
+        this.setState({
+            name: '',
+            age: '',
+            address: '',
+            email: '',
+            career: '',
+            education: '',
+            experience: '',
+            template: '0'
         });
-        this.props.onSubmit(this.state);
     }
 
     render() {
@@ -54,13 +107,14 @@ class FormCV extends Component {
                         <legend>Thông tin cá nhân</legend>
                         <div className="form-group row">
                             <label className="col-sm-2 col-form-label">Họ tên</label>
-                            <div className="col-sm-10">
+                            <div className="col-sm-10 required">
                                 <input type="text"
                                        className="form-control"
                                        name="name"
                                        value={this.state.name}
                                        onChange={ this.onHandleChange }
                                     />
+                                <span style={{color: "red"}}>{this.state.errors["name"]}</span>
                             </div>
                         </div>
                         <div className="form-group row">
@@ -94,6 +148,7 @@ class FormCV extends Component {
                                        value={this.state.email}
                                        onChange={ this.onHandleChange }
                                     />
+                                <span style={{color: "red"}}>{this.state.errors["email"]}</span>
                             </div>
                         </div>
                         <legend>Mục tiêu nghề nghiệp</legend>
@@ -107,6 +162,7 @@ class FormCV extends Component {
                                           onChange={ this.onHandleChange }
                                     >
                                 </textarea>
+                                <span style={{color: "red"}}>{this.state.errors["career"]}</span>
                             </div>
                         </div>
                         <legend>Học vấn</legend>
@@ -120,6 +176,7 @@ class FormCV extends Component {
                                           onChange={ this.onHandleChange }
                                     >
                                 </textarea>
+                                <span style={{color: "red"}}>{this.state.errors["education"]}</span>
                             </div>
                         </div>
                         <legend>Kinh nghiệm làm việc</legend>
@@ -133,6 +190,7 @@ class FormCV extends Component {
                                           onChange={ this.onHandleChange }
                                     >
                                 </textarea>
+                                <span style={{color: "red"}}>{this.state.errors["experience"]}</span>
                             </div>
                         </div>
                         <br/>
@@ -146,6 +204,7 @@ class FormCV extends Component {
                                             name="template"
                                             value={0}
                                             onChange={ this.onHandleChange }
+                                            checked={this.state.template === '0'}
                                             />
                                         Mẫu 1
                                     </label>
@@ -155,6 +214,7 @@ class FormCV extends Component {
                                             name="template"
                                             value={1}
                                             onChange={ this.onHandleChange }
+                                            checked={this.state.template === '1'}
                                             />
                                         Mẫu 2
                                     </label>
@@ -163,7 +223,7 @@ class FormCV extends Component {
                         </div>
 
                         <button type="submit" className="btn btn-primary">Submit</button>&nbsp;
-                        <button type="reset" className="btn btn-default">Reset</button>
+                        <button type="reset" className="btn btn-default" onClick={this.onReset}>Reset</button>
                     </form>
                 </div>
             </div>
