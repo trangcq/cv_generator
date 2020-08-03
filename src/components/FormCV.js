@@ -92,7 +92,8 @@ class FormCV extends Component {
             career: '',
             education: '',
             experience: '',
-            template: '0'
+            template: '0',
+            errors: {}
         });
     }
 
