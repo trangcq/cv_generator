@@ -5,7 +5,7 @@ import Template2 from './Template2';
 class Template extends Component {
     render() {
         const { users } = this.props;
-        const isTemplate = users ? (users.template == 1 ? true : false) : false;
+        const isTemplate = users ? (users.template === '1' ? true : false) : false;
         if (isTemplate) {
             return <Template2 users={users} />;
         }
