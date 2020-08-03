@@ -9,7 +9,7 @@ class App extends Component {
         this.state = {
             users: null
         };
-    }
+    }uid
 
     onSubmit = (data) => {
         this.setState({
@@ -32,12 +32,12 @@ class App extends Component {
     render() {
         const { users } = this.state;
         return (
-            <div className="container mt-30">
+            <div className="container-fl mt-30">
                 <div className="row">
-                    <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <div className="col-xs-5 col-sm-5 col-md-5 col-lg-5">
                         <FormCV onSubmit={this.onSubmit} />
                     </div>
-                    <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <div className="col-xs-7 col-sm-7 col-md-7 col-lg-7">
                         <Template users={users} />
                     </div>
                 </div>

@@ -6,53 +6,87 @@ class Template1 extends Component {
     render() {
         const { users } = this.props;
         return (
-            <div id="cvo-document" className="cvo-document">
-            <div>
-                <div className="cvo-page">
-                    <div className="cvo-subpage">
-                        <div id="cvo-body">
-                            <div id="cvo-main">
-                                <div id="group-header"><div id="cvo-profile" className="cvo-block">
-                                    <div id="cvo-header" className="hide-avatar">
-                                        <h1><span id="cvo-profile-fullname">{users ? users.name : ''}</span></h1>
-                                        <p>
-                                            <span id="cvo-profile-address">{users ? users.address : ''}</span>
-                                        </p>
-                                        <p>
-                                            <i className="fa fa-envelope"></i>
-                                            <span id="cvo-profile-email">{users ? users.email : ''}</span>
-                                        </p>
-                                    </div>
-                                </div>
-                                </div>
-                                <div id="group-content" className="cvo-block">
-                                    <div className="cvo-block-title">
-                                        <h3><span>Mục tiêu nghề nghiệp</span></h3>
-                                    </div>
-                                    <div className="block-content">
-                                        <div className="cvo-block-body">
-                                            <div id="cvo-objective-objective">{users ? users.career : ''}</div>
+            <div id="document" className="document">
+                <div className="page">
+                    <div className="subpage">
+                        <div id="body">
+                            <div id="group-header-1">
+                                <div id="profile" className="block">
+                                    <div id="profile-wraper">
+                                        <div id="profile-avatar-wraper" className="profile-item-1">
+                                            <img id="profile-avatar" src={ users && users.avatar !== '' ? users.avatar : "https://www.kkmm.gov.my/images/sub_bahagian/icon.png"} alt="avatar" />
+                                        </div>
+                                        <div id="profile-info" className="profile-item">
+                                            <div className="info">
+                                                <span id="profile-fullname" className="default_min_width_1">{users ? users.name : ''}</span>
+                                            </div>
+                                            <div className="contact">
+                                                <div className="contact-item">
+                                                    <i className={users && users.age ? "fa fa-calendar" : ''}></i>
+                                                    <span id="profile-dob" className="default_min_width_1">{users ? users.age : ''}</span>
+                                                </div>
+                                            </div>
+                                            <div className="contact">
+                                                <div className="contact-item">
+                                                    <i className={users && users.address ? "fa fa-map-marker" : ''}></i>
+                                                    <span id="profile-address" className="default_min_width_1">{users ? users.address : ''}</span>
+                                                </div>
+                                            </div>
+                                            <div className="contact">
+                                                <div className="contact-item">
+                                                    <i className={users && users.email ? "fa fa-envelope-square" : ''}></i>
+                                                    <span id="profile-email" className="default_min_width_1">{users ? users.email : ''}</span>
+                                                </div>
+                                            </div>
+                                            <div className="contact">
+                                                <div className="contact-item">
+                                                    <i className={users && users.phone ? "fa fa-phone" : ''}></i>
+                                                    <span id="profile-address" className="default_min_width_1">{users ? users.phone : ''}</span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div id="group-content" className="cvo-block">
-                                    <div className="cvo-block-title">
-                                        <h3><span>Học vấn</span></h3>
+                            </div>
+                            <div id="group-main">
+                                <div id="objective" className="block">
+                                    <div className="block-header">
+                                        <span id="objective-blocktitle" className="default_min_width_1">Mục tiêu nghề nghiệp</span>
                                     </div>
-                                    <div className="block-content">
-                                        <div className="cvo-block-body">
-                                            <div id="cvo-objective-objective">{users ? users.education : ''}</div>
-                                        </div>
+                                    <div className="cvo-block-body">
+                                        <div id="objective-objective" className="default_min_width_1">{users ? users.career : ''}</div>
                                     </div>
                                 </div>
-                                <div id="group-content" className="cvo-block">
-                                    <div className="cvo-block-title">
-                                        <h3><span>Kinh nghiệm làm việc</span></h3>
+                                <div id="objective" className="block">
+                                    <div className="block-header">
+                                        <span id="objective-blocktitle" className="default_min_width_1">Học vấn</span>
                                     </div>
-                                    <div className="block-content">
-                                        <div className="cvo-block-body">
-                                            <div id="cvo-objective-objective">{users ? users.experience : ''}</div>
-                                        </div>
+                                    <div className="block-body">
+                                        <div id="objective-objective" className="default_min_width_1">{users ? users.education : ''}</div>
+                                    </div>
+                                </div>
+                                <div id="objective" className="block">
+                                    <div className="block-header">
+                                        <span id="objective-blocktitle" className="default_min_width_1">Kinh nghiệm làm việc</span>
+                                    </div>
+                                    <div className="block-body">
+                                        <div id="objective-objective" className="default_min_width_1">{users ? users.experience : ''}</div>
+                                    </div>
+                                </div>
+                                <div id="objective" className="block">
+                                    <div className="block-header">
+                                        <span id="objective-blocktitle" className="default_min_width_1">Sở thích</span>
+                                    </div>
+                                    <div className="block-body">
+                                        <div id="objective-objective" className="default_min_width_1">{users ? users.hobby : ''}</div>
+                                    </div>
+                                </div>
+                                <div id="objective" className="block">
+                                    <div className="block-header">
+                                        <span id="objective-blocktitle" className="default_min_width_1">Thông tin khác</span>
+                                    </div>
+                                    <div className="block-body">
+                                        <div id="objective-objective" className="default_min_width_1">{users ? users.other : ''}</div>
                                     </div>
                                 </div>
                             </div>
@@ -60,8 +94,7 @@ class Template1 extends Component {
                     </div>
                 </div>
             </div>
-            </div>
-    );
+        );
     }
 }
 
